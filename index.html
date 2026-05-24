@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>decaflow</title>
+    <title>Decaflow</title>
     
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     
@@ -13,6 +13,7 @@
             padding: 0;
             height: 100vh;
             display: flex;
+            flex-direction: column; /* 이미지와 텍스트를 세로로 정렬 */
             justify-content: center;
             align-items: center;
             background-color: #ffffff;
@@ -20,43 +21,58 @@
             overflow: hidden; /* 애니메이션 중 스크롤바 방지 */
         }
         
-        /* 다채로운 로고 이미지(`image_24.png`)에 애니메이션 적용 */
+        /* 다채로운 로고 이미지 설정 */
         .logo-image {
-            /* 로고 크기 조정: 필요시 이 부분을 수정하세요. */
             width: auto;
-            max-width: 400px; /* 로고의 최대 너비 */
+            max-width: 250px; /* 이미지 크기 조절 */
             height: auto;
-            max-height: 400px; /* 로고의 최대 높이 */
+            max-height: 250px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px; /* 로고와 글자 사이 간격 */
             
-            /* 테두리 및 쉐도우 (깔끔하게 보이게 하기 위함) */
-            border-radius: 20px; /* 로고 테두리 곡률 */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* 미세한 그림자 */
+            /* 이미지도 함께 부드럽게 나타나도록 설정 */
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+
+        /* Decaflow 글자 설정 */
+        .logo-text {
+            font-size: 6rem; 
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            color: #111111;
             
-            /* 위에서 아래로 슬라이드하며 나타나는 애니메이션 정의 */
-            /* 시간을 2.2s로 수정 */
+            /* 최상단에서 중앙까지 2.2초 동안 천천히 내려오는 애니메이션 */
             animation: slideDownFadeIn 2.2s ease-out forwards;
             
-            /* 초기 상태: 위쪽에 위치하고 투명함 */
             opacity: 0;
-            transform: translateY(-50px); 
+            transform: translateY(-100vh); /* 화면 최상단 밖에서 시작 */
         }
         
-        /* 위에서 아래로 슬라이드 + 페이드인 애니메이션 정의 */
+        /* 위에서 아래로 슬라이드 + 페이드인 애니메이션 */
         @keyframes slideDownFadeIn {
             from {
                 opacity: 0;
-                transform: translateY(-100%); /* 화면 위쪽에서 시작 */
+                transform: translateY(-100vh); /* 최상단 시작점 */
             }
             to {
                 opacity: 1;
-                transform: translateY(0); /* 정위치로 이동 */
+                transform: translateY(0); /* 중앙 정위치 */
             }
+        }
+
+        /* 이미지용 기본 페이드인 효과 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    <img src="./favicon.ico" alt="Decaflow Logo" class="logo-image">
+    <img src="./logo.png" alt="Decaflow Logo" class="logo-image">
+
+    <div class="logo-text">Decaflow</div>
 
 </body>
 </html>
