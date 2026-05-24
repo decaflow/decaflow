@@ -22,20 +22,26 @@
             overflow: hidden; /* 애니메이션 중 스크롤바 방지 */
         }
         
-        /* 중앙 회오리 로고 이미지 스타일 */
-        .logo-image {
-            width: 250px; /* 고정 크기로 지정하여 깨짐 방지 */
+        /* 중앙 회오리 로고 이미지 가리기 스타일 */
+        .logo-image-container {
+            width: 250px;
             height: 250px;
-            object-fit: contain;
-            
-            /* 배경과 경계 없이 섞이도록 그림자와 곡률 제거 */
-            border-radius: 0; 
-            box-shadow: none; 
-            
+            border-radius: 50%; /* 로고 외곽 격자무늬를 동그랗게 잘라내기 위함 */
+            background-color: #ffffff; /* 격자무늬 배경을 완전한 흰색으로 가림 */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 30px; /* 이미지와 아래 글자 사이 간격 */
             
-            /* 이미지용 페이드인 효과 */
+            /* 이미지 전용 페이드인 효과 */
             animation: fadeInOnly 1.5s ease-out forwards;
+        }
+
+        .logo-image {
+            width: 108%; /* 격자무늬 테두리가 안 보이도록 미세하게 확대 크롭 */
+            height: 108%;
+            object-fit: cover;
         }
 
         /* Decaflow 글자 스타일 */
@@ -71,7 +77,9 @@
 </head>
 <body>
 
-    <img src="./logo.png" alt="Decaflow Logo" class="logo-image">
+    <div class="logo-image-container">
+        <img src="./logo.png" alt="Decaflow Logo" class="logo-image">
+    </div>
 
     <div class="logo-text">DecaFlow</div>
 
