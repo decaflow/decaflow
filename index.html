@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DecaFlow</title>
+    <title>DecaFlow - Mark Lee</title>
     
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="./favicon.png" type="image/png">
@@ -12,22 +12,29 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #ffffff;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #111111;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 24px;
+            animation: fadeInOnly 1.2s ease-out forwards;
         }
         
         .logo-container {
-            max-width: 520px;
+            max-width: 460px;
             width: 85%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: fadeInOnly 1.5s ease-out forwards;
+            margin-bottom: 32px;
         }
 
         .logo-image {
@@ -36,16 +43,75 @@
             display: block;
         }
 
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .name {
+            font-size: 1.55rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #111111;
+            margin: 0;
+        }
+
+        .title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            color: #555555;
+            margin: 0;
+        }
+
+        .company {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #333333;
+            margin: 4px 0 0 0;
+        }
+
+        /* 메일 클릭 링크 스타일 */
+        .email-link {
+            font-size: 0.95rem;
+            color: #0969da;
+            text-decoration: none;
+            margin-top: 10px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .email-link:hover {
+            color: #054da7;
+            text-decoration: underline;
+            background-color: #f6f8fa;
+        }
+
         @keyframes fadeInOnly {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="logo-container">
-        <img src="./logo.png" alt="DecaFlow Logo" class="logo-image">
+    <div class="container">
+        <!-- 로고 이미지 -->
+        <div class="logo-container">
+            <img src="./logo.png?v=3" alt="DecaFlow Logo" class="logo-image">
+        </div>
+
+        <!-- 하단 정보 및 메일 링크 -->
+        <div class="profile-card">
+            <h1 class="name">Mark Lee</h1>
+            <p class="title">IT SUPPORT & SERVER ENGINEER</p>
+            <p class="company">Decaflow</p>
+            <a href="mailto:mark.lee@decaflow.co.kr" class="email-link">mark.lee@decaflow.co.kr</a>
+        </div>
     </div>
 
 </body>
