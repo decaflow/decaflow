@@ -38,11 +38,10 @@
             animation: fadeInOnly 1.2s ease-out forwards;
         }
         
-        /* 기존 460px 대비 50% 확대 (690px) */
         .logo-container {
             max-width: 690px;
             width: 90%;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
         }
 
         .logo-image {
@@ -51,7 +50,6 @@
             display: block;
         }
 
-        /* 하단 단정한 텍스트 레이아웃 */
         .profile-card {
             display: flex;
             flex-direction: column;
@@ -72,19 +70,11 @@
             letter-spacing: 0.12em;
             color: #64748b;
             text-transform: uppercase;
-            margin: 0 0 6px 0;
-        }
-
-        .company {
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            color: #334155;
-            margin: 0 0 14px 0;
+            margin: 0 0 12px 0;
         }
 
         .email-link {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
             letter-spacing: -0.01em;
             color: #2563eb;
@@ -109,16 +99,15 @@
 <body>
 
     <div class="container">
-        <!-- 50% 커진 로고 (캐시 우회용 쿼리스트링 유지) -->
+        <!-- 50% 확대 로고 -->
         <div class="logo-container">
-            <img src="./logo.png?v=4" alt="DecaFlow Logo" class="logo-image">
+            <img src="./logo.png?v=6" alt="DecaFlow Logo" class="logo-image">
         </div>
 
-        <!-- 단정한 서체의 정보 블록 -->
+        <!-- 하단 정보 블록 -->
         <div class="profile-card">
             <h1 class="name">Mark Lee</h1>
             <p class="title">IT SUPPORT & SERVER ENGINEER</p>
-            <p class="company">Decaflow</p>
             <a href="mailto:mark.lee@decaflow.co.kr" class="email-link">mark.lee@decaflow.co.kr</a>
         </div>
     </div>
