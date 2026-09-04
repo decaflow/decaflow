@@ -38,9 +38,10 @@
             animation: fadeInOnly 1.2s ease-out forwards;
         }
         
+        /* 기존 690px에서 20% 축소 (552px) */
         .logo-container {
-            max-width: 690px;
-            width: 90%;
+            max-width: 552px;
+            width: 85%;
             margin-bottom: 36px;
         }
 
@@ -70,8 +71,7 @@
             letter-spacing: 0.12em;
             color: #64748b;
             text-transform: uppercase;
-            line-height: 1.2;
-            margin: 0 0 4px 0; /* 간격을 기존 12px에서 4px로 축소 */
+            margin: 0 0 12px 0;
         }
 
         .email-link {
@@ -80,7 +80,7 @@
             letter-spacing: -0.01em;
             color: #2563eb;
             text-decoration: none;
-            padding: 2px 8px; /* 호버 영역을 유지하면서 상하 여백 축소 */
+            padding: 4px 10px;
             border-radius: 4px;
             transition: all 0.2s ease;
         }
@@ -100,9 +100,9 @@
 <body>
 
     <div class="container">
-        <!-- 50% 확대 로고 -->
+        <!-- 20% 축소된 로고 -->
         <div class="logo-container">
-            <img src="./logo.png?v=6" alt="DecaFlow Logo" class="logo-image">
+            <img src="./logo.png?v=7" alt="DecaFlow Logo" class="logo-image">
         </div>
 
         <!-- 하단 정보 블록 -->
